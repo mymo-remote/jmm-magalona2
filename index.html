@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Mark Manuel Magalona | Safety &amp; Compliance Virtual Assistant</title>
+<meta name="description" content="John Mark Manuel Magalona — Safety & Compliance Virtual Assistant. Officer-level precision, remote-ready, results driven.">
+<style>
+  :root{
+    --navy-950:#0a1830;
+    --navy-900:#0f2347;
+    --navy-800:#16315f;
+    --navy-700:#1d3f78;
+    --navy-600:#2a4f8f;
+    --gold-500:#d4af37;
+    --gold-400:#a6790a;
+    --gold-300:#8a6308;
+    --ivory:#0a1830;
+    --muted:#5b6b87;
+    --white:#ffffff;
+    --bg-soft:#f5f7fb;
+    --border-soft:rgba(15,35,71,0.1);
+    --border-gold:rgba(196,160,40,0.35);
+    --max-width:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    background:var(--white);
+    color:var(--navy-950);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img,svg{display:block;}
+  .container{
+    width:100%;
+    max-width:var(--max-width);
+    margin:0 auto;
+    padding:0 24px;
+  }
+  section{position:relative;padding:100px 0;}
+
+  /* Background texture */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(212,175,55,0.06), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(15,35,71,0.04), transparent 45%),
+      var(--white);
+    z-index:-2;
+  }
+
+  /* ---------- Header / Nav ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:1000;
+    background:rgba(255,255,255,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+    box-shadow:0 1px 16px rgba(15,35,71,0.05);
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 24px;
+    max-width:var(--max-width);
+    margin:0 auto;
+  }
+  .logo{
+    font-size:1.15rem;
+    font-weight:700;
+    letter-spacing:0.5px;
+    color:var(--ivory);
+  }
+  .logo span{color:var(--gold-300);}
+  .nav-links{
+    display:flex;
+    gap:36px;
+  }
+  .nav-links a{
+    font-size:0.92rem;
+    font-weight:500;
+    letter-spacing:0.5px;
+    color:var(--navy-800);
+    transition:color 0.25s ease;
+    position:relative;
+  }
+  .nav-links a:hover{color:var(--gold-300);}
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:-6px;
+    width:0;height:1px;
+    background:var(--gold-400);
+    transition:width 0.25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+
+  .nav-cta{
+    display:inline-block;
+    border:1px solid var(--gold-500);
+    color:var(--gold-300);
+    padding:9px 20px;
+    border-radius:30px;
+    font-size:0.85rem;
+    font-weight:600;
+    letter-spacing:0.5px;
+    transition:all 0.25s ease;
+  }
+  .nav-cta:hover{
+    background:var(--gold-500);
+    color:var(--navy-950);
+  }
+
+  .menu-toggle{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    z-index:1001;
+  }
+  .menu-toggle span{
+    width:26px;height:2px;
+    background:var(--gold-400);
+    transition:all 0.3s ease;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:110px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:48px;
+    align-items:center;
+    width:100%;
+  }
+  .hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--gold-300);
+    font-size:0.8rem;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .hero-eyebrow::before{
+    content:"";
+    width:34px;height:1px;
+    background:var(--gold-500);
+  }
+  .hero h1{
+    font-size:clamp(2.2rem, 5vw, 3.6rem);
+    font-weight:800;
+    line-height:1.12;
+    color:var(--ivory);
+    margin-bottom:20px;
+  }
+  .hero h1 .accent{color:var(--gold-400);}
+  .tagline{
+    font-size:clamp(1.05rem, 2vw, 1.3rem);
+    font-style:italic;
+    color:var(--gold-300);
+    font-weight:600;
+    margin-bottom:22px;
+    border-left:3px solid var(--gold-500);
+    padding-left:16px;
+  }
+  .hero p.lead{
+    color:var(--muted);
+    font-size:1.05rem;
+    max-width:540px;
+    margin-bottom:36px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:15px 32px;
+    border-radius:6px;
+    font-weight:700;
+    font-size:0.95rem;
+    letter-spacing:0.4px;
+    transition:all 0.3s ease;
+    cursor:pointer;
+    border:1px solid transparent;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--gold-400), var(--gold-500));
+    color:var(--navy-950);
+    box-shadow:0 8px 24px rgba(212,175,55,0.25);
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(212,175,55,0.35);
+  }
+  .btn-outline{
+    border:1px solid var(--navy-700);
+    color:var(--navy-800);
+  }
+  .btn-outline:hover{
+    border-color:var(--gold-500);
+    color:var(--gold-300);
+    background:var(--bg-soft);
+  }
+
+  .hero-badge-card{
+    background:var(--white);
+    border:1px solid var(--border-gold);
+    border-radius:16px;
+    padding:40px 32px;
+    text-align:center;
+    box-shadow:0 30px 60px -24px rgba(15,35,71,0.25);
+  }
+  .badge-ring{
+    width:120px;height:120px;
+    margin:0 auto 24px;
+    border-radius:50%;
+    border:2px solid var(--gold-500);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+  .badge-ring::before{
+    content:"";
+    position:absolute;
+    inset:-8px;
+    border-radius:50%;
+    border:1px dashed rgba(212,175,55,0.4);
+  }
+  .badge-ring .initials{
+    font-size:2.1rem;
+    font-weight:800;
+    color:var(--gold-400);
+  }
+  .hero-badge-card h3{
+    color:var(--ivory);
+    font-size:1.1rem;
+    margin-bottom:6px;
+  }
+  .hero-badge-card .role{
+    color:var(--gold-300);
+    font-size:0.85rem;
+    font-weight:600;
+    letter-spacing:0.5px;
+    margin-bottom:22px;
+  }
+  .stat-row{
+    display:flex;
+    justify-content:space-between;
+    border-top:1px solid rgba(212,175,55,0.15);
+    padding-top:20px;
+    margin-top:6px;
+  }
+  .stat{
+    text-align:center;
+    flex:1;
+  }
+  .stat .num{
+    font-size:1.4rem;
+    font-weight:800;
+    color:var(--gold-400);
+    display:block;
+  }
+  .stat .lbl{
+    font-size:0.7rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+
+  /* ---------- Section heading ---------- */
+  .section-head{
+    text-align:center;
+    max-width:680px;
+    margin:0 auto 60px;
+  }
+  .section-eyebrow{
+    color:var(--gold-300);
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .section-head h2{
+    font-size:clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight:800;
+    color:var(--ivory);
+  }
+  .section-head h2 span{color:var(--gold-400);}
+  .section-head p{
+    color:var(--muted);
+    margin-top:14px;
+    font-size:1.02rem;
+  }
+  .divider{
+    width:60px;height:2px;
+    background:var(--gold-500);
+    margin:18px auto 0;
+  }
+
+  /* ---------- About ---------- */
+  .about{
+    background:var(--bg-soft);
+    border-top:1px solid var(--border-soft);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .about-visual{
+    background:var(--white);
+    border:1px solid var(--border-gold);
+    border-radius:16px;
+    padding:36px;
+    box-shadow:0 20px 40px -28px rgba(15,35,71,0.2);
+  }
+  .about-visual ul{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .about-visual li{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    color:var(--navy-900);
+    font-size:0.95rem;
+  }
+  .check{
+    flex-shrink:0;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:rgba(212,175,55,0.15);
+    color:var(--gold-300);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.8rem;
+    font-weight:800;
+    margin-top:2px;
+  }
+  .about-text p{
+    color:var(--muted);
+    margin-bottom:18px;
+    font-size:1.02rem;
+  }
+  .about-text strong{color:var(--navy-800);}
+  .tag-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:24px;
+  }
+  .tag-list span{
+    border:1px solid var(--border-gold);
+    background:rgba(212,175,55,0.08);
+    color:var(--navy-800);
+    padding:7px 16px;
+    border-radius:30px;
+    font-size:0.8rem;
+    font-weight:600;
+    letter-spacing:0.3px;
+  }
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .service-card{
+    background:var(--white);
+    border:1px solid var(--border-soft);
+    border-radius:14px;
+    padding:34px 28px;
+    box-shadow:0 4px 18px rgba(15,35,71,0.05);
+    transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--gold-500);
+    box-shadow:0 20px 40px -16px rgba(212,175,55,0.22);
+  }
+  .service-icon{
+    width:54px;height:54px;
+    border-radius:12px;
+    background:rgba(212,175,55,0.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:22px;
+    color:var(--gold-300);
+  }
+  .service-card h3{
+    color:var(--navy-900);
+    font-size:1.12rem;
+    margin-bottom:12px;
+    font-weight:700;
+  }
+  .service-card p{
+    color:var(--muted);
+    font-size:0.93rem;
+  }
+  .service-card.full{
+    grid-column:span 1;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact{
+    background:var(--bg-soft);
+    border-top:1px solid var(--border-soft);
+  }
+  .contact-box{
+    background:linear-gradient(135deg, var(--navy-900), var(--navy-700));
+    border:1px solid var(--border-gold);
+    border-radius:20px;
+    padding:60px 50px;
+    text-align:center;
+    max-width:780px;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 30px 60px -24px rgba(15,35,71,0.3);
+  }
+  .contact-box::before{
+    content:"";
+    position:absolute;
+    top:-60px;right:-60px;
+    width:200px;height:200px;
+    border-radius:50%;
+    background:rgba(212,175,55,0.1);
+  }
+  .contact-box h2{
+    font-size:clamp(1.6rem,3vw,2.2rem);
+    color:var(--white);
+    font-weight:800;
+    margin-bottom:14px;
+  }
+  .contact-box p{
+    color:#c3cce0;
+    margin-bottom:32px;
+    font-size:1.02rem;
+  }
+  .contact-methods{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .contact-pill{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(212,175,55,0.35);
+    padding:14px 24px;
+    border-radius:30px;
+    color:var(--gold-500);
+    font-weight:600;
+    font-size:0.92rem;
+  }
+
+  footer{
+    text-align:center;
+    padding:32px 24px;
+    color:var(--muted);
+    font-size:0.85rem;
+    border-top:1px solid var(--border-soft);
+    background:var(--white);
+  }
+  footer .gold{color:var(--gold-300);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:768px){
+    .nav-links{
+      position:fixed;
+      top:0;right:0;
+      height:100vh;
+      width:min(78vw,320px);
+      background:var(--white);
+      flex-direction:column;
+      justify-content:center;
+      align-items:flex-start;
+      gap:30px;
+      padding:0 40px;
+      transform:translateX(100%);
+      transition:transform 0.35s ease;
+      border-left:1px solid var(--border-gold);
+      box-shadow:-10px 0 30px rgba(15,35,71,0.12);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-cta{display:none;}
+    .menu-toggle{display:flex;}
+    .menu-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+    .menu-toggle.open span:nth-child(2){opacity:0;}
+    .menu-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+    section{padding:72px 0;}
+    .services-grid{grid-template-columns:1fr;}
+    .hero-actions{flex-direction:column;}
+    .btn{text-align:center;}
+    .contact-box{padding:42px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#home" class="logo">JMM <span>Magalona</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+    <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow">Safety &amp; Compliance Virtual Assistant</div>
+      <h1>John Mark Manuel <span class="accent">Magalona</span></h1>
+      <p class="tagline">"Officer-Level Precision. Remote-Ready. Results Driven."</p>
+      <p class="lead">Former Assistant Safety Officer at sea, now bringing maritime-grade discipline, documentation accuracy, and compliance rigor to businesses that need a dependable remote partner.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+        <a href="#services" class="btn btn-outline">View Services</a>
+      </div>
+    </div>
+    <div class="hero-badge-card">
+      <div class="badge-ring"><span class="initials">JM</span></div>
+      <h3>John Mark Manuel Magalona</h3>
+      <div class="role">Safety &amp; Compliance VA</div>
+      <div class="stat-row">
+        <div class="stat"><span class="num">5+</span><span class="lbl">Core Services</span></div>
+        <div class="stat"><span class="num">Sea</span><span class="lbl">Background</span></div>
+        <div class="stat"><span class="num">100%</span><span class="lbl">Remote</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">About Me</div>
+      <h2>From the <span>Bridge</span> to Your <span>Back Office</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-visual">
+        <ul>
+          <li><span class="check">&#10003;</span> Safety &amp; Security Inspections</li>
+          <li><span class="check">&#10003;</span> Planned Maintenance System (PMS)</li>
+          <li><span class="check">&#10003;</span> Crew Welfare Coordination</li>
+          <li><span class="check">&#10003;</span> Resting Hours Monitoring</li>
+          <li><span class="check">&#10003;</span> Vetting Inspections (e.g. SIRE, CDI)</li>
+          <li><span class="check">&#10003;</span> Heavy Administrative Operations</li>
+        </ul>
+      </div>
+      <div class="about-text">
+        <p>I'm <strong>John Mark Manuel Magalona</strong>, a former <strong>Assistant Safety Officer</strong> with hands-on experience working at sea, where precision wasn't optional — it was the standard. My day-to-day involved safety and security inspections, maintaining Planned Maintenance Systems, supporting crew welfare, monitoring resting hours for regulatory compliance, and preparing vessels for rigorous vetting inspections.</p>
+        <p>That same discipline now powers the way I support businesses remotely. I bring an <strong>officer's eye for detail</strong> to documentation, audits, and compliance tracking — paired with strong administrative skills built from years of heavy paperwork, reporting, and coordination under real operational pressure.</p>
+        <p>If your business needs someone who treats compliance and documentation with the seriousness it deserves, I'm ready to step in.</p>
+        <div class="tag-list">
+          <span>Detail-Oriented</span>
+          <span>Deadline-Driven</span>
+          <span>Process-Focused</span>
+          <span>Trustworthy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">What I Offer</div>
+      <h2>Services Built on <span>Compliance Expertise</span></h2>
+      <div class="divider"></div>
+      <p>A blend of maritime safety discipline and dependable virtual administrative support.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>
+        </div>
+        <h3>Safety Documentation Management</h3>
+        <p>Organizing, updating, and maintaining safety records, certificates, and compliance files so nothing falls through the cracks.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>Audit Preparation &amp; Report Writing</h3>
+        <p>Preparing audit-ready documentation and writing clear, accurate reports drawn from real inspection and vetting experience.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>Compliance Tracking &amp; Monitoring</h3>
+        <p>Setting up and managing tracking systems for certifications, deadlines, and regulatory requirements to keep you ahead of schedule.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <h3>SOP Writing and Review</h3>
+        <p>Drafting and refining Standard Operating Procedures that are clear, actionable, and aligned with compliance standards.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3>General VA Admin Support</h3>
+        <p>Email management, scheduling, data entry, and research — dependable day-to-day support so you can focus on running your business.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2>Let's Get to Work</h2>
+      <p>Looking for a remote partner who treats safety, compliance, and admin work with officer-level discipline? Reach out and let's discuss how I can support your operations.</p>
+      <div class="contact-methods">
+        <div class="contact-pill">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+          magalona.remote@gmail.com
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> John Mark Manuel Magalona — <span class="gold">Safety &amp; Compliance Virtual Assistant</span>. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
