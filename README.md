@@ -1,1 +1,1 @@
-# jmm-magalona2
+# magalona.remote
